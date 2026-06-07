@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Registrasi</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Registrasi Berhasil</h1>
+
+    <p><b>Nama:</b> {{ mhs.nama }}</p>
+    <p><b>NIM:</b> {{ mhs.nim }}</p>
+    <p><b>Email:</b> {{ mhs.email }}</p>
+    <p><b>Jurusan:</b> {{ mhs.jurusan }}</p>
+    <p><b>Jenis Kelamin:</b> {{ mhs.jenis_kelamin }}</p>
+    <p><b>Hobi:</b> {{ ", ".join(mhs.hobi) }}</p>
+    <p><b>Alamat:</b> {{ mhs.alamat }}</p>
+
+    <br>
+
+    <a href="/">Kembali ke Form</a>
+
+</body>
+</html>

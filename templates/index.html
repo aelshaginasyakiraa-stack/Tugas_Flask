@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrasi Mahasiswa</title>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+      
+</head>
+<body>
+
+<h1>Registrasi Mahasiswa Baru</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:red;">
+                {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<form action="/register" method="POST">
+
+    <p>Nama Lengkap</p>
+    <input type="text" name="nama">
+
+    <p>NIM</p>
+    <input type="text" name="nim">
+
+    <p>Email</p>
+    <input type="email" name="email">
+
+    <p>Password</p>
+    <input type="password" name="password">
+
+    <p>Jurusan</p>
+    <select name="jurusan">
+        <option value="">Pilih Jurusan</option>
+        <option>Informatika</option>
+        <option>Sistem Informasi</option>
+        <option>Teknologi Informasi</option>
+    </select>
+
+    <p>Jenis Kelamin</p>
+
+    <input type="radio"
+           name="jenis_kelamin"
+           value="Laki-laki">
+    Laki-laki
+
+    <input type="radio"
+           name="jenis_kelamin"
+           value="Perempuan">
+    Perempuan
+
+    <p>Hobi</p>
+
+    <input type="checkbox"
+           name="hobi"
+           value="Membaca">
+    Membaca
+
+    <input type="checkbox"
+           name="hobi"
+           value="Olahraga">
+    Olahraga
+
+    <input type="checkbox"
+           name="hobi"
+           value="Musik">
+    Musik
+
+    <p>Alamat</p>
+    <textarea name="alamat"></textarea>
+
+    <br><br>
+
+    <button type="submit">
+        Daftar
+    </button>
+
+</form>
+
+</body>
+</html>
